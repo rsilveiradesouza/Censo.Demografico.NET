@@ -1,0 +1,22 @@
+{
+  "profiles": {
+    "Censo.NET.API": {
+      "commandName": "Project",
+      "commandLineArgs": "--migrate",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "SQL_SERVER_CONNECTION_STRING": "Data Source=localhost;Initial Catalog=censo;Persist Security Info=True;User ID=sa;Password=Teste@123"
+      },
+      "applicationUrl": "https://127.0.0.1:5001;http://127.0.0.1:5000"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+      "publishAllPorts": true,
+      "useSSL": true
+    }
+  }
+}

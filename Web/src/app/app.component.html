@@ -1,0 +1,36 @@
+<div class="header bg-dark text-white">
+  <div class="container">
+    Censo.NET - Dashboard
+  </div>
+</div>
+<div class="container" role="main">
+  <ng-container *ngIf="!loading">
+    <div class="row mt-4">
+      <div class="col-6">Regiões
+        <div>
+          <apx-chart [series]="data.regiao.data" [chart]="chartOptions.chart" [labels]="data.regiao.labels"
+            [legend]="chartOptions.legend"></apx-chart>
+        </div>
+      </div>
+      <div class="col-6">Gêneros
+        <div>
+          <apx-chart [series]="data.generos.data" [chart]="chartOptions.chart" [labels]="data.generos.labels"
+            [legend]="chartOptions.legend"></apx-chart>
+        </div>
+      </div>
+      <div class="col-6">Escolaridades
+        <div>
+          <apx-chart [series]="data.escolaridade.data" [chart]="chartOptions.chart" [labels]="data.escolaridade.labels"
+            [legend]="chartOptions.legend">
+          </apx-chart>
+        </div>
+      </div>
+      <div class="col-6">Etnias
+        <div>
+          <apx-chart [series]="data.etnias.data" [chart]="chartOptions.chart" [labels]="data.etnias.labels"
+            [legend]="chartOptions.legend"></apx-chart>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

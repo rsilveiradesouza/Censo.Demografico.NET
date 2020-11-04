@@ -1,0 +1,26 @@
+version: '3'
+services:
+  sqlserver:
+    image: "mcr.microsoft.com/mssql/server:latest"
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Teste@123
+  server:    
+    build: ./Server/src
+    depends_on:
+      - sqlserver
+    ports:
+      - "8080:2000"
+    environment:
+      - ASPNETCORE_URLS=http://+:2000
+      - ASPNETCORE_ENVIRONMENT=Development
+      - SQL_SERVER_CONNECTION_STRING=Data Source=sqlserver;Initial Catalog=censo;Persist Security Info=True;User ID=sa;Password=Teste@123
+    command: ./wait/wait-for-it.sh sqlserver:1433 --strict --timeout=300 -- dotnet Censo.NET.Api.dll --migrate
+  web:
+    build: ./Web
+    depends_on:
+      - server
+    ports:
+      - "8081:80"    

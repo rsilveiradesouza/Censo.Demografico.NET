@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Censo.NET.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Censo.NET.API.Controllers.BuscaController.Filtro(System.String,System.Nullable{Censo.NET.Domain.Common.Enums.Regiao},System.Nullable{Censo.NET.Domain.Common.Enums.Genero},System.Nullable{Censo.NET.Domain.Common.Enums.Etnia},System.Nullable{Censo.NET.Domain.Common.Enums.Escolaridade})">
+            <summary>
+            Obtém dados estatísticos
+            </summary>
+            <param name="nome">Nome do usuário</param>
+            <param name="regiao">Região</param>
+            <param name="genero">Gênero</param>
+            <param name="etnia">Etnia</param>
+            <param name="escolaridade">Escolaridade</param>
+            <response code="200">Dados obtidos com sucesso</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:Censo.NET.API.Controllers.BuscaController.ArvoreGenealogica(System.Guid,System.Int32)">
+            <summary>
+            Árvore genealógica de uma pesquisa
+            </summary>
+            <param name="id">Id da pesquisa</param>
+            <param name="nivel">Nível máximo da árvore genealógica solicitada</param>
+            <response code="200">Árvore genealógica obtida com sucesso</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:Censo.NET.API.Controllers.PesquisaController.Obter(System.Guid)">
+            <summary>
+            Obtém uma pesquisa do censo
+            </summary>
+            <param name="id">Id da pesquisa a ser obtida</param>
+            <response code="200">Pesquisa obtida com sucesso</response>
+            <response code="404">Pesquisa não foi encontrada</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:Censo.NET.API.Controllers.PesquisaController.ObterTudo">
+            <summary>
+            Obtém todas as pesquisas
+            </summary>
+            <response code="200">Pesquisas obtidas com sucesso</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:Censo.NET.API.Controllers.PesquisaController.CadastrarPesquisa(Censo.NET.Application.Dtos.PesquisaDto)">
+            <summary>
+            Recebe nova pesquisa do censo
+            </summary>
+            <param name="pesquisa">Info da pesquisa</param>
+            <response code="201">Pesquisa cadastrada com sucesso</response>
+            <response code="500">Erro interno</response>
+        </member>
+    </members>
+</doc>
